@@ -6,7 +6,6 @@ import { RES_MENU_URL } from "../utils/constants";
 const RestaurentMenu = () => {
   const [resInfo, setResInfo] = useState(null);
   const { resId } = useParams();
-  console.log(resId);
 
   useEffect(() => {
     fetchResMenu();
@@ -15,7 +14,6 @@ const RestaurentMenu = () => {
   const fetchResMenu = async () => {
     const response = await fetch(RES_MENU_URL + resId);
     const menuData = await response.json();
-    console.log(menuData);
     setResInfo(menuData);
   };
 
@@ -26,8 +24,6 @@ const RestaurentMenu = () => {
 
   const { itemCards } =
     resInfo.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card;
-
-  console.log(itemCards);
   return (
     <div className="resMenu-container">
       <h2>{name}</h2>
