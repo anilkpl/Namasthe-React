@@ -30,6 +30,7 @@ body::-webkit-scrollbar {
 
 .nav-items li a {
     text-decoration: none;
+    color: aliceblue;
 }
 
 .res-container {
