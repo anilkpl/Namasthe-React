@@ -1,7 +1,7 @@
 import { RES_IMG_URL } from "../utils/constants";
 
 const RestarentCard = ({rest}) => {
-  console.log(rest)
+
   const {id,name,cloudinaryImageId,costForTwo,cuisines,avgRating} = rest?.info;
  
     return (
