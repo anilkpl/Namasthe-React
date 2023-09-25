@@ -25,6 +25,11 @@ body::-webkit-scrollbar {
     font-size: x-large;
     gap: 20px;
     list-style-type: none;
+    
+}
+
+.nav-items li a {
+    text-decoration: none;
 }
 
 .res-container {
@@ -37,6 +42,7 @@ body::-webkit-scrollbar {
 
 .card {
     width: 250px;
+    height: 400px;
     border-radius: 5px;
     text-align: center;
     word-break: break-all;
@@ -45,6 +51,11 @@ body::-webkit-scrollbar {
     inset 0 -3em 3em rgba(0, 0, 0, 0.1),
     0 0 0 2px rgb(255, 255, 255),
     0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+.restMenuLink {
+    text-decoration: none;
+    color: black;
 }
 
 .res-image img {
