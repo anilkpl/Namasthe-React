@@ -2,14 +2,26 @@ import { useState, useEffect } from "react";
 import RestarentCard from "./RestarentCard";
 import { RES_API_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   const [restarentsList, setRestarentsList] = useState([]);
-  const [filteredVal, setFilteredVal] = useState("");
+  const [searchVal, setSearchVal] = useState("");
   const [filteredList, setFilteredList] = useState([]);
 
   useEffect(() => {
     fetchRestarentsList();
   }, []);
+
+  const onlineStatus = useOnlineStatus();
+  
+  if (onlineStatus === false)
+    return (
+      <center>
+        <h2>
+          🔴🔴Network is Offline Mode ,Plzzzz check your Internet Connection🔴🔴
+        </h2>
+      </center>
+    );
 
   const fetchRestarentsList = async () => {
     const response = await fetch(RES_API_URL);
@@ -17,7 +29,7 @@ const Body = () => {
     const resList =
       restData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
-
+    // console.log(resList)
     setRestarentsList(resList);
     setFilteredList(resList);
   };
@@ -28,14 +40,14 @@ const Body = () => {
         <input
           className="search-input"
           placeholder="Search Here"
-          value={filteredVal}
+          value={searchVal}
           onChange={(e) => {
-            setFilteredVal(e.target.value);
-            console.log(e.target.value);
-            const filteredList = restarentsList.filter((rest) =>
+            setSearchVal(e.target.value);
+
+            const filteredList = restarentsList?.filter((rest) =>
               rest?.info?.name
                 ?.toLowerCase()
-                .includes(filteredVal.toLowerCase())
+                .includes(filteredVal?.toLowerCase())
             );
             setFilteredList(filteredList);
             if (e.target.value == "") setFilteredList(restarentsList);
@@ -43,11 +55,11 @@ const Body = () => {
         />
       </div>
       <div className="res-container">
-        {restarentsList.length === 0
+        {restarentsList?.length === 0
           ? Array(20)
               .fill("")
-              .map((v,i) => <Shimmer key={i}/>)
-          : filteredList.map((rest) => (
+              .map((v, i) => <Shimmer key={i} />)
+          : filteredList?.map((rest) => (
               <RestarentCard key={rest?.info?.id} rest={rest} />
             ))}
       </div>
