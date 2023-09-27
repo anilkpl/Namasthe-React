@@ -1,9 +1,10 @@
 import Header from "./Header";
 import { Outlet } from "react-router-dom";
 
+
 function AppLayout() {
     return (
-      <div className="app-container">
+      <div className="scrollbar-hide">
         <Header />
         <Outlet />
       </div>
