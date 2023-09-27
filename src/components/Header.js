@@ -6,15 +6,15 @@ const Header = () => {
   const onlineStatus = useOnlineStatus()
   return (
     <>
-      <div className="head-container">
+      <div className="flex items-center justify-between bg-red-300 p-2 m-1 rounded-md shadow-lg">
         <div className="logo-container">
           <NavLink to="/">
-            <img alt="logo" className="logo-img" src={RES_LOGO_URL} />
+            <img alt="logo" className="w-32 h-28 rounded-md" src={RES_LOGO_URL} />
           </NavLink>
         </div>
         
         <div className="nav-container">
-          <ul className="nav-items">
+          <ul className="flex gap-6 text-xl list-none">
             
             <li>
               <NavLink to="/">Home</NavLink>
