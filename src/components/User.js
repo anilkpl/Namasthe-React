@@ -21,7 +21,7 @@ export default class User extends Component {
      <div className='user-container'>
         <img src={avatar_url}/>
         <span>
-            <h2>{name}</h2>
+            <div className='m-2 font-medium text-md'>{name}</div>
         </span>
      </div>
     )

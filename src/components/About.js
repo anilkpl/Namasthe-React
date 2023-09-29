@@ -3,10 +3,10 @@ import User from "./User";
 
 const About = () => {
   return (
-    <h2>
-      <center>About component</center>
+    <div className="flex flex-col justify-center items-center">
+      <div className="font-bold text-2xl p-2 m-2">About component</div>
       <User />
-    </h2>
+    </div>
   );
 };
 

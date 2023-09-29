@@ -1,13 +1,14 @@
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import { RES_IMG_URL } from "../utils/constants";
 
 const RestarentCard = ({ rest }) => {
   const { id, name, cloudinaryImageId, costForTwo, cuisines, avgRating } =
     rest?.info;
 
+
   return (
-    <NavLink className="overflow-hidden" to={`/restaurentmenu/${id}`}>
-      <div className="p-4 w-[250px] h-[400px]  shadow-2xl bg-red-50 rounded-lg">
+    <NavLink className="overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-95 duration-300 " to={`/restaurentmenu/${id}`}>
+      <div className="p-4 w-[250px] h-[400px]  shadow-2xl bg-red-50 hover:bg-rose-200 rounded-lg " >
         <div>
           <img
             className="w-full h-[180px] rounded-md"

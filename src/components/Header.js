@@ -26,6 +26,9 @@ const Header = () => {
               <NavLink to="/contact">Contact</NavLink>
             </li>
             <li>
+              <NavLink to="/instamart">Instamart</NavLink>
+            </li>
+            <li>
               <NavLink to="/cart">Cart</NavLink>
             </li>
             <li>{onlineStatus ? '✅' : '🔴'}</li>
