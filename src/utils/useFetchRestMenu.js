@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import { RES_MENU_URL } from "../utils/constants";
+import { RES_MENU_URL } from "../utils/constants.js";
 
 const useFetchRestMenu = (resId) => {
     const [resInfo, setResInfo] = useState(null);

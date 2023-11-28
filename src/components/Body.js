@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import RestarentCard from "./RestarentCard";
-import { RES_API_URL } from "../utils/constants";
-import Shimmer from "./Shimmer";
-import useOnlineStatus from "../utils/useOnlineStatus";
+import RestarentCard from "./RestarentCard.js";
+import { RES_API_URL } from "../utils/constants.js";
+import Shimmer from "./Shimmer.js";
+import useOnlineStatus from "../utils/useOnlineStatus.js";
 const Body = () => {
   const [restarentsList, setRestarentsList] = useState([]);
   const [searchVal, setSearchVal] = useState("");
@@ -14,6 +14,8 @@ const Body = () => {
   }, []);
 
   const onlineStatus = useOnlineStatus();
+
+  // console.log(restarentsList)
 
   if (onlineStatus === false)
     return (
@@ -27,7 +29,7 @@ const Body = () => {
   const fetchRestarentsList = async () => {
     try {
       const response = await fetch(RES_API_URL);
-      
+
       if (!response.ok) {
         throw new Error("Failed to fetch swiggy API");
       }
@@ -35,7 +37,7 @@ const Body = () => {
       const resList =
         restData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
-      // console.log(resList)
+      // console.log(restData);
       setRestarentsList(resList);
       setFilteredList(resList);
       setShowApiError("");
@@ -73,7 +75,11 @@ const Body = () => {
         {restarentsList?.length === 0
           ? Array(20)
               .fill("")
-              .map((v, i) => <Shimmer key={i} />)
+              .map((v, i) => (
+                <div key={i} className="p-4 w-[250px] h-[400px] shadow-2xl rounded-md bg-red-50">
+                  <Shimmer />
+                </div>
+              ))
           : filteredList?.map((rest) => (
               <RestarentCard key={rest?.info?.id} rest={rest} />
             ))}
