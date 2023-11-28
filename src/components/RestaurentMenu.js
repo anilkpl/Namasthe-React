@@ -1,7 +1,7 @@
-import Shimmer from "./Shimmer";
+import Shimmer from "./Shimmer.js";
 import { useParams } from "react-router-dom";
-import useFetchRestMenu from "../utils/useFetchRestMenu";
-import RestaurentCategory from "./RestaurentCategory";
+import useFetchRestMenu from "../utils/useFetchRestMenu.js";
+import RestaurentCategory from "./RestaurentCategory.js";
 import React, { useState } from "react";
 
 const RestaurentMenu = () => {

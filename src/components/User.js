@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Shimmer from './Shimmer';
+import Shimmer from './Shimmer.js';
 
 export default class User extends Component {
     constructor(props){

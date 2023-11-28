@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import RestarentCard from "./RestarentCard";
-import { RES_API_URL } from "../utils/constants";
-import Shimmer from "./Shimmer";
-import useOnlineStatus from "../utils/useOnlineStatus";
+import RestarentCard from "./RestarentCard.js";
+import { RES_API_URL } from "../utils/constants.js";
+import Shimmer from "./Shimmer.js";
+import useOnlineStatus from "../utils/useOnlineStatus.js";
 const Body = () => {
   const [restarentsList, setRestarentsList] = useState([]);
   const [searchVal, setSearchVal] = useState("");

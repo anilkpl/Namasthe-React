@@ -1,4 +1,4 @@
-import ItemListMenu from "./ItemListMenu";
+import ItemListMenu from "./ItemListMenu.js";
 
 const RestaurentCategory = ({ data , showItemList, setShowItemList,setCategoryIndex}) => {
   //lifting the state up
