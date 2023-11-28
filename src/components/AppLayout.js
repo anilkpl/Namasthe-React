@@ -1,11 +1,12 @@
-import Header from "./Header";
-import Body from "./Body";
+import Header from "./Header.js";
+import { Outlet } from "react-router-dom";
+
 
 function AppLayout() {
     return (
-      <div className="app-container">
+      <div className="scrollbar-hide">
         <Header />
-        <Body />
+        <Outlet />
       </div>
     );
   }
